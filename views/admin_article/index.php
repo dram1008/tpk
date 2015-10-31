@@ -10,12 +10,13 @@ $this->registerJs(<<<JS
 $('.buttonDelete').click(function (e) {
         e.preventDefault();
         if (confirm('Подтвердите удаление')) {
+            var b = $(this);
             var id = $(this).data('id');
             ajaxJson({
                 url: '/admin/articleList/' + id + '/delete',
                 success: function (ret) {
-                    infoWindow('Успешно', function() {
-                        $('#newsItem-' + id).remove();
+                    showInfo('Успешно', function() {
+                        b.parent().parent().remove();
                     });
                 }
             });
