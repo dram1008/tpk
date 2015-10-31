@@ -33,14 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'options' => ['enctype' => 'multipart/form-data']
                 ]); ?>
                 <?= $form->field($model, 'header')->label('Название') ?>
-                <?= $form->field($model, 'source')->label('Источник') ?>
                 <?= $form->field($model, 'description')->label('Кратко')->textarea(['rows' => 20]) ?>
                 <?= $form->field($model, 'content')->label('Полно')->widget('cs\Widget\HtmlContent\HtmlContent') ?>
                 <?= $form->field($model, 'image')->label('Картинка')->widget('cs\Widget\FileUpload2\FileUpload') ?>
-                <?= $model->field($form, 'is_add_image') ?>
-                <?= $form->field($model, 'tree_node_id_mask')->label('Категории')->widget('cs\Widget\CheckBoxTreeMask\CheckBoxTreeMask', [
-                    'tableName' => 'rod_article_tree',
-                ]) ?>
 
                 <hr>
                 <div class="form-group">

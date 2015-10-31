@@ -21,28 +21,7 @@ use yii\web\Response;
 
 class SiteController extends BaseController
 {
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only'  => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow'   => true,
-                        'roles'   => ['@'],
-                    ],
-                ],
-            ],
-            'verbs'  => [
-                'class'   => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+    public $layout = 'landing';
 
     public function actions()
     {
@@ -59,12 +38,42 @@ class SiteController extends BaseController
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Article::query()->orderBy(['date_insert' => SORT_DESC]);
+        $all = $query->count();
+        $pageSize = 10;
+        $pagesCount = floor(($all + $pageSize - 1)/$pageSize);
+        $limit = $pageSize;
+        $page = self::getParam('page', 1);
+        $offset = ($page-1) * $pageSize;
+        $query->offset($offset)->limit($limit);
+
+        return $this->render([
+            'list' => $query->all(),
+            'pagesCount' => $pagesCount,
+            'page' => $page,
+        ]);
     }
 
-    public function actionTrasfere()
+    public function actionArticles_month($year, $month)
     {
-        return $this->render();
+        return $this->render([
+            'list' => Article::query([
+                'MONTH(date_insert)' => $month,
+                'YEAR(date_insert)' => $year,
+            ])->orderBy(['date_insert' => SORT_DESC])->all(),
+            'year' => $year,
+            'month' => $month,
+        ]);
+    }
+
+    public function actionSearch()
+    {
+        $term = self::getParam('term');
+        $items = Article::query(['like', 'content', $term])->orWhere(['like', 'header', $term])->all();
+
+        return $this->render([
+            'list' => $items,
+        ]);
     }
 
     public function actionIn()

@@ -16,8 +16,12 @@ class Admin_articleController extends AdminBaseController
     public function actionIndex()
     {
         return $this->render([
-            'items' => Article::query()->orderBy(['date_insert' => SORT_DESC])->all(),
         ]);
+    }
+
+    public function actionMain()
+    {
+        return $this->redirect(['admin_article/index']);
     }
 
     public function actionAdd()

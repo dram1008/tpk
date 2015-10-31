@@ -1,230 +1,52 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $list array */
+/* @var $pagesCount int */
+/* @var $page int */
 
-$this->title = 'ПриРоде';
-$this->registerJs("$('.carousel').carousel()");
+$this->title = 'ТПК';
 ?>
-<div class="site-index">
-    <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?>
-        <small>Агентство Сохранения Рода</small>
-    </h1>
 
-    <?php $this->registerJs("$('.carousel').carousel()"); ?>
-    <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel" style="
-    margin-bottom: 60px;
-">
-       <!-- Indicators -->
-<!--        <ol class="carousel-indicators">-->
-<!--            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
-<!--            <li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-<!--            <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
-<!--            <li data-target="#carousel-example-generic" data-slide-to="3"></li>-->
-<!--            <li data-target="#carousel-example-generic" data-slide-to="4"></li>-->
-<!--        </ol>-->
+<div class="intro">Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus augue laoreet rutrum faucibus
+    dolor auctor. Cras mattis consectetur purus sit amet fermentum, Vestibulum id ligula porta.
+</div>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="/images/controller/site/index/0.jpg" alt="...">
+<!-- Begin Blog Grid -->
+<div class="blog-wrap">
+    <!-- Begin Blog -->
+    <div class="blog-grid">
 
-                <div class="carousel-caption">
+        <?php foreach ($list as $item) { ?>
+            <?php $article = new \app\models\Article($item) ?>
+            <div class="post format-image box">
+                <div class="frame">
+                    <a href="<?= $article->getLink() ?>">
+                        <img src="<?= $item['image'] ?>" alt=""/>
+                    </a>
+                </div>
+                <h2 class="title"><a href="<?= $article->getLink() ?>"><?= $item['header'] ?></a></h2>
 
+                <p><?= $item['description'] ?></p>
+
+                <div class="details">
+                    <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date_insert']) ?></a></span>
                 </div>
             </div>
-            <div class="item">
-                <img src="/images/controller/site/index/1.jpg" alt="...">
+        <?php } ?>
 
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/controller/site/index/2.jpg" alt="...">
-
-                <div class="carousel-caption">
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/controller/site/index/3.jpg" alt="...">
-
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/controller/site/index/4.jpg" alt="...">
-
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
+    <!-- End Blog -->
 
-    <div class="row">
-        <div class="col-lg-4">
-            <a href="<?= \yii\helpers\Url::to(['site/out']) ?>">
-                <img src="/images/controller/site/index/s1.jpg" class="img-circle center-block" width="140"
-                     height="140"/>
-            </a>
-
-            <h2 class="center-block text-center">Уход души</h2>
-
-            <p class="center-block text-center">Ритуал «Отправление к РОДУ НЕБЕСНОМУ» - это процедура воссоединения души
-                умершего человека с его Родом Небесным. Суть ее заключается в том, что тело сжигается на костре, на
-                чистом воздухе на чистой Земле с направлением души к предкам и Роду Небесному.</p>
-        </div>
-        <div class="col-lg-4">
-            <a href="<?= \yii\helpers\Url::to(['site/trasfere']) ?>">
-                <img src="/images/controller/site/index/s2.jpg" class="img-circle center-block" width="140"
-                     height="140"/>
-            </a>
-
-            <h2 class="center-block text-center">Странствия души</h2>
-
-            <p class="center-block text-center">Консалтинговые услуги по действиям в промежуточном состоянии между
-                уходом и приходом на Землю</p>
-        </div>
-        <div class="col-lg-4">
-            <a href="<?= \yii\helpers\Url::to(['site/in']) ?>">
-                <img src="/images/controller/site/index/s3.jpg" class="img-circle center-block" width="140"
-                     height="140"/>
-            </a>
-
-            <h2 class="center-block text-center">Приход души</h2>
-
-            <p class="center-block text-center">Призывание Великой Души. Здоровые роды на Земле по законам космоса.</p>
-        </div>
-    </div>
-
-    <?php
-    $isShowForm = false;
-    if (Yii::$app->user->isGuest) {
-        if (!isset(Yii::$app->request->cookies['subscribeIsStarted'])) {
-            $isShowForm = true;
-        }
-    }
-
-    if ($isShowForm) {
-        ?>
-        <hr>
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4">
-                <?php
-                $this->registerJs(<<<JS
-// форма подписки
-    {
-        function setCookie (name, value, expires, path, domain, secure) {
-            document.cookie = name + "=" + escape(value) +
-            ((expires) ? "; expires=" + expires : "") +
-            ((path) ? "; path=" + path : "") +
-            ((domain) ? "; domain=" + domain : "") +
-            ((secure) ? "; secure" : "");
-        }
-        $('#formSubscribeSubmit').click(function() {
-            var object;
-            object = $('#formSubscribeName');
-            if (object.length > 0) {
-                if (object.val() == '') {
-                    object.parent().addClass('has-error').find('.help-block-error').html('Это обязательное поле').show().removeClass('hide');
-                    object.focus();
-
-                    return;
-                }
-            }
-            object = $('#formSubscribeEmail');
-            if (object.val() == '') {
-                object.parent().addClass('has-error').find('.help-block-error').html('Это обязательное поле').show().removeClass('hide');
-                object.focus();
-
-                return;
-            }
-            ajaxJson({
-                url: '/subscribe/mail',
-                data: {
-                    email: $('#formSubscribeEmail').val(),
-                    name: $('#formSubscribeName').val()
-                },
-                success: function(ret) {
-                    var parentForm = $('#formSubscribe').parent();
-                    $('#formSubscribe').remove();
-                    parentForm.append(
-                        $('<p>', {
-                            class: 'alert alert-success'
-                        }).html('Вы успешно подписались на рассылку')
-                    );
-                    setCookie('subscribeIsStarted', 1);
-                    showInfo('Вам на почту выслано подтверждение, пройдите пожалуйста на почту');
-                },
-                errorScript: function(ret) {
-                    object = $('#formSubscribeEmail');
-                    object.parent().addClass('has-error').find('.help-block-error').html(ret.data).show().removeClass('hide');
-                }
-            });
-        });
-        $('#formSubscribeName, #formSubscribeEmail').on('input', function() {
-            $(this).parent().removeClass('has-error').find('.help-block-error').hide();
-        });
-    }
-JS
-                );
-                ?>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Подписаться на рассылку</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form id="formSubscribe">
-                            <?php if (Yii::$app->user->isGuest) { ?>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="formSubscribeName" placeholder="Имя">
-
-                                    <p class="help-block help-block-error hide">Это поле должно быть заполнено
-                                        обязательно</p>
-                                </div>
-                            <?php } ?>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="formSubscribeEmail" placeholder="Email">
-
-                                <p class="help-block help-block-error hide">Это поле должно быть заполнено
-                                    обязательно</p>
-                            </div>
-                            <button type="button" class="btn btn-default" style="width: 100%;" id="formSubscribeSubmit">
-                                Подписаться
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php } else { ?>
-        <hr>
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4">
-                <p class="alert alert-success">Вы успешно подписались на рассылку</p>
-            </div>
+    <?php if ($pagesCount > 1) { ?>
+        <div id="navigation">
+            <?php if ($page > 1) { ?>
+                <div class="nav-previous"><a href="<?= \yii\helpers\Url::current(['page'=> $page - 1])?>"><span class="meta-nav-prev">← Назад</span></a></div>
+            <?php } ?>
+            <?php if ($page < $pagesCount) { ?>
+                <div class="nav-next"><a href="<?= \yii\helpers\Url::current(['page'=> $page + 1])?>" ><span class="meta-nav-next">Вперед &rarr;</span></a></div>
+            <?php } ?>
         </div>
     <?php } ?>
-
-
-    <hr>
-    <?= $this->render('../blocks/share', [
-        'url'         => \yii\helpers\Url::current([], true),
-        'image'       => \yii\helpers\Url::to('/images/controller/site/index/3.jpg', true),
-        'title'       => 'Агентство Сохранения Рода',
-        'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
-    ]) ?>
-
 </div>
+<!-- End Blog Grid -->
