@@ -119,6 +119,7 @@ use app\assets\AppAsset;
                     'MONTH(date_insert)' => SORT_DESC,
                 ])
                 ->all();
+                \cs\services\VarDumper::dump($rows);
                 $max = $rows[0]['year']*12+$rows[0]['month'];
                 $min = $rows[count($rows)-1]['year']*12+$rows[count($rows)-1]['month'];
 
