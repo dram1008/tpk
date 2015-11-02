@@ -119,7 +119,6 @@ use app\assets\AppAsset;
                     'MONTH(date_insert)' => SORT_DESC,
                 ])
                 ->all();
-                \cs\services\VarDumper::dump($rows);
                 $max = $rows[0]['year']*12+$rows[0]['month'];
                 $min = $rows[count($rows)-1]['year']*12+$rows[count($rows)-1]['month'];
 
@@ -152,7 +151,7 @@ use app\assets\AppAsset;
                             }
                         }
                         ?>
-                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month-1] ?> <?= $year ?></a> (<?= $count ?>)</li>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month] ?> <?= $year ?></a> (<?= $count ?>)</li>
                     <?php } ?>
                 </ul>
             </div>
