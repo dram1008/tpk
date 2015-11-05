@@ -61,14 +61,4 @@ JS
         }?>
     </div>
 
-
-    <div class="col-lg-6">
-        <div class="row">
-            <!-- Split button -->
-            <div class="btn-group">
-                <a href="<?= Url::to(['admin_page/add'])?>" class="btn btn-default">Добавить</a>
-
-            </div>
-        </div>
-    </div>
 </div>
