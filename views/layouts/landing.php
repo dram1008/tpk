@@ -152,7 +152,7 @@ use app\assets\AppAsset;
                             }
                         }
                         ?>
-                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month] ?> <?= $year ?></a> (<?= $count ?>)</li>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month-1] ?> <?= $year ?></a> (<?= $count ?>)</li>
                     <?php } ?>
                 </ul>
             </div>
