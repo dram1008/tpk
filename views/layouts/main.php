@@ -96,6 +96,13 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                                 <?php } ?>
 
                                 <li class="divider"></li>
+                                <li><a
+                                        href="<?= \yii\helpers\Url::to(['cabinet/change_email']) ?>"><i
+                                            class="glyphicon glyphicon-asterisk"
+                                            style="padding-right: 5px;"
+                                            ></i>Сменить
+                                        логин/email</a></li>
+                                <li class="divider"></li>
 
                                 <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"><i
                                             class="glyphicon glyphicon-off" style="padding-right: 5px;"></i>Выйти</a>
@@ -137,7 +144,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; ТПК 2015</p>
+        <p class="pull-left">&copy; <a href="/">ТПК</a> 2015</p>
     </div>
 </footer>
 

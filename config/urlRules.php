@@ -6,6 +6,10 @@ return [
 
     'cabinet/profile' => 'cabinet/profile',
 
+    'cabinet/changeEmail'                   => 'cabinet/change_email',
+    'changeEmail/activate/<code:\\w+>'      => 'auth/change_email_activate',
+
+
     'password/recover' => 'auth/password_recover',
     'password/recover/activate/<code:\\w+>' => 'auth/password_recover_activate',
     'registration/<code:\\w+>' => 'auth/registration_referal',

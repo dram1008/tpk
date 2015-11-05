@@ -6,11 +6,13 @@ use app\models\NewsItem;
 use app\models\User;
 use app\services\GsssHtml;
 use cs\services\Str;
+use cs\services\Url;
 use cs\services\VarDumper;
 use Yii;
 use yii\base\Model;
 use cs\Widget\FileUpload2\FileUpload;
 use yii\db\Query;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
@@ -35,6 +37,7 @@ class Article extends \cs\base\BaseForm
     public $is_added_site_update;
     /** @var  bool */
     public $is_add_image = true;
+    public $video;
 
     function __construct($fields = [])
     {
@@ -61,6 +64,13 @@ class Article extends \cs\base\BaseForm
                 'Описание краткое',
                 0,
                 'string'
+            ],
+            [
+                'video',
+                'Youtube ролик',
+                0,
+                'url', [],
+                'в формате https://www.youtube.com/embed/jQCfBYYO0XI'
             ],
             [
                 'image',
