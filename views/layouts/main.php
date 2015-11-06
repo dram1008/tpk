@@ -102,6 +102,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                                             style="padding-right: 5px;"
                                             ></i>Сменить
                                         логин/email</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['cabinet/password_change']) ?>"><i class="glyphicon glyphicon-asterisk" style="padding-right: 5px;"></i>Сменить пароль</a></li>
                                 <li class="divider"></li>
 
                                 <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"><i

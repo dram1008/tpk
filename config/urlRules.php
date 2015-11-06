@@ -6,6 +6,7 @@ return [
 
     'cabinet/profile' => 'cabinet/profile',
 
+    'cabinet/passwordChange'                => 'cabinet/password_change',
     'cabinet/changeEmail'                   => 'cabinet/change_email',
     'changeEmail/activate/<code:\\w+>'      => 'auth/change_email_activate',
 
