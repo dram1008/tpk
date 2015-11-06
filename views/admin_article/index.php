@@ -58,10 +58,7 @@ JS
         [
             'header' => 'Название',
             'content' => function($item) {
-                if ($item['image']) {
-                    return Html::a($item['header'], ['admin_article/edit', 'id' => $item['id'] ])
-                        ;
-                }
+                return Html::a($item['header'], ['admin_article/edit', 'id' => $item['id'] ]);
             },
         ],
         'date_insert:datetime:Дата добавления',
