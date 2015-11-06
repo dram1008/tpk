@@ -40,7 +40,6 @@ class Admin_articleController extends AdminBaseController
 
     public function actionEdit($id)
     {
-        VarDumper::dump($id);
         $model = \app\models\Form\Article::find($id);
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
