@@ -52,6 +52,13 @@ JS
 
                     ]), ['admin_article/edit', 'id' => $item['id'] ])
                         ;
+                } else if ($item['video']) {
+                    $video = $item['video'];
+                    $video = new \cs\services\Url($video);
+                    $video = explode('/', $video);
+                    $video = $video[count($video)-1];
+                    return Html::a($video, ['admin_article/edit', 'id' => $item['id'] ])
+                        ;
                 }
             },
         ],
