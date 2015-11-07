@@ -69,7 +69,7 @@ class Article extends \cs\base\BaseForm
                 'date',
                 'Дата',
                 0,
-                'string',
+                'default',
                 'widget' => [
                     'cs\Widget\DatePicker\DatePicker', [
                         'dateFormat' => 'php:d.m.Y',
