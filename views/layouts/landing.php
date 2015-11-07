@@ -55,7 +55,7 @@ use app\assets\AppAsset;
         <!-- Begin Logo -->
         <div class="logo" style="padding: 0px;">
             <a href="/">
-                <img src="/images/logo4.png" alt="" height="68"/>
+                <img src="/images/LogoTPK_site_blog-01.png" alt="" height="68"/>
             </a>
         </div>
         <!-- End Logo -->
