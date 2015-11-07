@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'options' => ['enctype' => 'multipart/form-data']
                 ]); ?>
                 <?= $form->field($model, 'header')->label('Название') ?>
+                <?= $model->field($form, 'date') ?>
                 <?= $form->field($model, 'description')->label('Кратко')->textarea(['rows' => 20]) ?>
                 <?= $form->field($model, 'content')->label('Полно')->widget('cs\Widget\HtmlContent\HtmlContent') ?>
                 <?= $form->field($model, 'image')->label('Картинка')->widget('cs\Widget\FileUpload2\FileUpload') ?>

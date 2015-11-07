@@ -26,7 +26,7 @@ $this->title = $item->getField('header');
     <div class="post format-image box">
 
         <div class="details">
-            <span class="icon-image"><?= Yii::$app->formatter->asDate($item->getField('date_insert')) ?></span>
+            <span class="icon-image"><?= Yii::$app->formatter->asDate($item->getField('date')) ?></span>
         </div>
 
         <?= $item->getField('content') ?>

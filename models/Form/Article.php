@@ -66,6 +66,17 @@ class Article extends \cs\base\BaseForm
                 'string'
             ],
             [
+                'date',
+                'Дата',
+                0,
+                'string',
+                'widget' => [
+                    'cs\Widget\DatePicker\DatePicker', [
+                        'dateFormat' => 'php:d.m.Y',
+                    ]
+                ],
+            ],
+                [
                 'video',
                 'Youtube ролик',
                 0,
@@ -97,7 +108,6 @@ class Article extends \cs\base\BaseForm
             'beforeInsert' => function ($fields) {
                 $fields['date_insert'] = gmdate('YmdHis');
                 $fields['id_string'] = Str::rus2translit($fields['header']);
-                $fields['date'] = gmdate('Y-m-d');
 
                 return $fields;
             },

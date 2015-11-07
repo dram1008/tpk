@@ -107,16 +107,16 @@ use app\assets\AppAsset;
                 $dateNow = new DateTime();
                 $rows = \app\models\Article::query()->select([
                     'count(*) as c1',
-                    'YEAR(date_insert) as year',
-                    'MONTH(date_insert) as month',
+                    'YEAR(date) as year',
+                    'MONTH(date) as month',
                 ])
                 ->groupBy([
-                    'YEAR(date_insert)',
-                    'MONTH(date_insert)',
+                    'YEAR(date)',
+                    'MONTH(date)',
                 ])
                 ->orderBy([
-                    'YEAR(date_insert)' => SORT_DESC,
-                    'MONTH(date_insert)' => SORT_DESC,
+                    'YEAR(date)' => SORT_DESC,
+                    'MONTH(date)' => SORT_DESC,
                 ])
                 ->all();
                 /** @var int $max максиальный месяц с годом  0-11 */

@@ -45,7 +45,7 @@ $this->title = $monthArray[$month - 1] . ' ' . $year;
                     <p><?= $item['description'] ?></p>
 
                     <div class="details">
-                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date_insert']) ?></a></span>
+                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date']) ?></a></span>
                     </div>
 
                 </div>
@@ -61,7 +61,7 @@ $this->title = $monthArray[$month - 1] . ' ' . $year;
                     <p><?= $item['description'] ?></p>
 
                     <div class="details">
-                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date_insert']) ?></a></span>
+                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date']) ?></a></span>
                     </div>
                 </div>
             <?php } ?>
