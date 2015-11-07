@@ -8,8 +8,8 @@
 $this->title = 'ТПК';
 ?>
 
-<div class="intro">Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus augue laoreet rutrum faucibus
-    dolor auctor. Cras mattis consectetur purus sit amet fermentum, Vestibulum id ligula porta.
+<div class="intro">
+    ТПК — ВЕДУЩАЯ РОССИЙСКАЯ ПРОЦЕССИНГОВАЯ КОМПАНИЯ НА РЫНКЕ БЕЗНАЛИЧНОГО ОТПУСКА НЕФТЕПРОДУКТОВ
 </div>
 
 <!-- Begin Blog Grid -->
