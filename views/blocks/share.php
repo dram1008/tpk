@@ -22,5 +22,4 @@ $this->registerMetaTag(['name' => 'og:description', 'content' => $description]);
     <li><a class="facebook" href="<?= (string)(new csUrl('http://www.facebook.com/sharer.php', [
             'u' => $url,
         ])) ?>"></a></li>
-    <li><a class="twitter" href="#"></a></li>
 </ul>
