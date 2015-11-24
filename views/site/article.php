@@ -16,7 +16,8 @@ $this->title = $item->getField('header');
 
 <div class="main-image">
     <div class="outer">
-        <span class="inset"><img src="<?= \cs\Widget\FileUpload2\FileUpload::getOriginal($item->getImage())  ?>" alt="" width="1010"></span>
+        <span class="inset"><img src="<?= \cs\Widget\FileUpload2\FileUpload::getOriginal($item->getImage()) ?>" alt=""
+                                 width="1010"></span>
     </div>
 </div>
 
@@ -38,8 +39,6 @@ $this->title = $item->getField('header');
 </div>
 
 <div class="sidebar box">
-
-
     <div class="sidebox widget">
         <h3 class="widget-title">Поиск</h3>
         <form class="searchform" method="get" action="/search">
@@ -55,8 +54,8 @@ $this->title = $item->getField('header');
 </div>
 
 <?= $this->render('../blocks/share', [
-    'url' => \yii\helpers\Url::current(),
-    'image' => \cs\Widget\FileUpload2\FileUpload::getOriginal($item->getImage()),
-    'title' => $this->title,
+    'url'         => \yii\helpers\Url::current([], true),
+    'image'       => \cs\Widget\FileUpload2\FileUpload::getOriginal($item->getImage()),
+    'title'       => $this->title,
     'description' => \app\services\GsssHtml::getMiniText($item->getField('content')),
-])?>
+]) ?>
