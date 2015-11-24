@@ -40,6 +40,7 @@ use app\assets\AppAsset;
     <script type="text/javascript" src="/style/js/mediaelementplayer.min.js"></script>
     <script type="text/javascript" src="/style/js/jquery.dcflickr.1.0.js"></script>
     <script type="text/javascript" src="/style/js/twitter.min.js"></script>
+    <link rel="shortcut icon" href="/images/ico.png">
     <script type="text/javascript">
         $.backstretch("/style/images/bg/1.jpg");
     </script>
