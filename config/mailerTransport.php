@@ -8,7 +8,7 @@ return [
         'class'    => 'Swift_SmtpTransport',
         'host'     => 'smtp.timeweb.ru',
         'port'     => '25',
-        'username' => 'no-reply@galaxysss.ru',
+        'username' => 'no-reply@admin.ru',
         'password' => 'no-reply1',
     ]
 ];

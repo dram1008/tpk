@@ -64,8 +64,7 @@ use app\assets\AppAsset;
         <div id="menu-wrapper">
             <div id="menu" class="menu">
                 <ul id="tiny">
-                    <li><a href="/about">О компании</a></li>
-                    <li><a href="/contact">Контакты</a></li>
+                    <li><a href="/about">О нас</a></li>
                 </ul>
             </div>
         </div>

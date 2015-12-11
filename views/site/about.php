@@ -17,13 +17,8 @@ $page = \app\models\Page::find(1);
 
     <h1 class="title"><?= $page->getField('header') ?></h1>
 
-    <div class="one-third">
-        <div class="outer none"><span class="inset"><img src="<?= $page->getField('image') ?>" ></span></div>
-    </div>
+    <?= $page->getField('content') ?>
 
-    <div class="two-third last">
-        <?= $page->getField('content') ?>
-    </div>
     <div class="clear"></div>
 
 </div>
