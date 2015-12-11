@@ -14,6 +14,8 @@ $this->title = $item->getField('header');
     <?= $this->title ?>
 </div>
 
+
+
 <div class="main-image">
     <div class="outer">
         <span class="inset"><img src="<?= \cs\Widget\FileUpload2\FileUpload::getOriginal($item->getImage()) ?>" alt=""
@@ -40,7 +42,9 @@ $this->title = $item->getField('header');
 
 <div class="sidebar box">
     <div class="sidebox widget">
-        <h3 class="widget-title">Поиск</h3>
+
+        <a href="/"><img src="/images/home1.png" width="20"/><br><br></a>
+        <h3 class="widget-title"> Поиск</h3>
         <form class="searchform" method="get" action="/search">
             <input type="text" name="term" value="Введите слово ..." onFocus="this.value=''"
                    onBlur="this.value='Введите слово ...'"/>
