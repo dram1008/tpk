@@ -6,10 +6,12 @@
 /* @var $page int */
 
 $this->title = 'ТПК';
+$page = \app\models\Page::find(2);
+
 ?>
 
 <div class="intro">
-    ТПК — ВЕДУЩАЯ РОССИЙСКАЯ ПРОЦЕССИНГОВАЯ КОМПАНИЯ НА РЫНКЕ БЕЗНАЛИЧНОГО ОТПУСКА НЕФТЕПРОДУКТОВ
+    <?= $page->getField('content') ?>
 </div>
 
 <!-- Begin Blog Grid -->
