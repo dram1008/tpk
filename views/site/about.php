@@ -17,7 +17,14 @@ $page = \app\models\Page::find(1);
 
     <h1 class="title"><?= $page->getField('header') ?></h1>
 
-    <?= $page->getField('content') ?>
+    <div class="one-third">
+        <div class="outer none"><span class="inset"><a href="<?= \cs\Widget\FileUpload2\FileUpload::getOriginal($page->getField('image')) ?>" target="_blank"><img src="<?= $page->getField('image') ?>" ></a></span></div>
+        География ТПК
+    </div>
+
+    <div class="two-third last">
+        <?= $page->getField('content') ?>
+    </div>
 
     <div class="clear"></div>
 
