@@ -41,7 +41,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
  $cfg['Servers'][$i]['controlhost'] = 'localhost';
  $cfg['Servers'][$i]['controlport'] = '3306';
  $cfg['Servers'][$i]['controluser'] = 'root';
- $cfg['Servers'][$i]['controlpass'] = '';
+ $cfg['Servers'][$i]['controlpass'] = 'root';
 
 /* Storage database and tables */
 // $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
