@@ -145,7 +145,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <a href="/" target="_blank">ТПК</a> 2015 | Разраьотано <a href="http://www.galaxtsss.ru/" target="_blank">Галактический Союз Сил Света</a></p>
+        <p class="pull-left">&copy; <a href="/" target="_blank">ТПК</a> 2015 | Спроектировано: <a href="http://www.galaxtsss.ru/" target="_blank">Галактический Союз Сил Света</a></p>
     </div>
 </footer>
 
