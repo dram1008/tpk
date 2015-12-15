@@ -44,6 +44,7 @@ use app\assets\AppAsset;
     <script type="text/javascript">
         $.backstretch("/style/images/bg/1.jpg");
     </script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <?php $this->head() ?>
 </head>
 <body>
