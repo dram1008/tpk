@@ -64,7 +64,7 @@ use app\assets\AppAsset;
             <div id="menu" class="menu">
                 <ul id="tiny">
                     <li><a href="/">Главная</a></li>
-                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/about2">О нас</a></li>
                     <li><a href="http://oilpc.ru" target="_blank">oilpc.ru</a></li>
                 </ul>
             </div>
