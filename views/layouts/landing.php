@@ -147,6 +147,7 @@ use app\assets\AppAsset;
                         ];
                         $year = floor($i/12);
                         $count = 0;
+                        \cs\services\VarDumper::dump($rows);
                         foreach($rows as $item) {
                             if ($item['year'] == $year && $item['month'] == $month) {
                                 $count = $item['c1'];
