@@ -152,7 +152,7 @@ use app\assets\AppAsset;
                                 $count = $item['c1'];
                             }
                         }
-                        \cs\services\VarDumper::dump($rows);
+                        \cs\services\VarDumper::dump($monthArray);
                         ?>
                         <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month-1] ?> <?= $year ?></a> (<?= $count ?>)</li>
                     <?php } ?>
