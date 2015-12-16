@@ -128,7 +128,7 @@ use app\assets\AppAsset;
                 <ul>
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
-                        \cs\services\VarDumper::dump([$max%12,$min%12]);
+                        \cs\services\VarDumper::dump([$max%12,$min%12,$rows]);
                         $month = $i%12;
                         if ($month == 0) $month = 11;
                         $monthZero = $month + 1;
