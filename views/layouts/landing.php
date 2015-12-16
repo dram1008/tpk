@@ -128,6 +128,7 @@ use app\assets\AppAsset;
                 <ul>
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
+                        \cs\services\VarDumper::dump([$max%12,$min%12]);
                         $month = $i%12;
                         $monthZero = $month;
                         if ($monthZero < 10) $monthZero = '0'.$monthZero;
@@ -147,7 +148,6 @@ use app\assets\AppAsset;
                         ];
                         $year = floor($i/12);
                         $count = 0;
-                        \cs\services\VarDumper::dump($rows);
 
                         foreach($rows as $item) {
                             if ($item['year'] == $year && $item['month'] == $month) {
