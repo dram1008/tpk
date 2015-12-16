@@ -116,7 +116,7 @@ use app\assets\AppAsset;
                     'MONTH(date)',
                 ])
                 ->orderBy([
-                    'YEAR(date)' => SORT_DESC,
+                    'YEAR(date)'  => SORT_DESC,
                     'MONTH(date)' => SORT_DESC,
                 ])
                 ->all();
@@ -128,7 +128,6 @@ use app\assets\AppAsset;
                 <ul>
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
-                        \cs\services\VarDumper::dump([$max,$min]);
                         $month = $i%12;
                         $monthZero = $month;
                         if ($monthZero < 10) $monthZero = '0'.$monthZero;
@@ -155,7 +154,7 @@ use app\assets\AppAsset;
                         }
 
                         ?>
-                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month-1] ?> <?= $year ?></a> (<?= $count ?>)</li>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month] ?> <?= $year ?></a> (<?= $count ?>)</li>
                         <?php
 
                         ?>
