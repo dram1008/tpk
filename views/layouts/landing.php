@@ -120,15 +120,14 @@ use app\assets\AppAsset;
                     'MONTH(date)' => SORT_DESC,
                 ])
                 ->all();
-                /** @var int $max максиальный месяц с годом  0-11 */
-                $max = $rows[0]['year']*12+$rows[0]['month'];
-                $min = $rows[count($rows)-1]['year']*12+$rows[count($rows)-1]['month'];
+                /** @var int $max максиальный месяц с годом  1-12 */
+                $max = $rows[0]['year']*12+($rows[0]['month']-1);
+                $min = $rows[count($rows)-1]['year']*12+($rows[count($rows)-1]['month']-1);
 
                 ?>
                 <ul>
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
-                        \cs\services\VarDumper::dump([$max%12,$min%12,$rows]);
                         $month = $i%12;
                         if ($month == 0) $month = 11;
                         $monthZero = $month + 1;
@@ -151,7 +150,7 @@ use app\assets\AppAsset;
                         $count = 0;
 
                         foreach($rows as $item) {
-                            if ($item['year'] == $year && $item['month'] == $month) {
+                            if ($item['year'] == $year && $item['month'] == ($month+1)) {
                                 $count = $item['c1'];
                             }
                         }
