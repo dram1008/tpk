@@ -63,9 +63,9 @@ class SiteController extends BaseController
         $query->offset($offset)->limit($limit);
 
         return $this->render([
-            'list' => $query->all(),
+            'list'       => $query->all(),
             'pagesCount' => $pagesCount,
-            'page' => $page,
+            'page'       => $page,
         ]);
     }
 
