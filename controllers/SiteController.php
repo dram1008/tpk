@@ -61,7 +61,7 @@ class SiteController extends BaseController
         $page = self::getParam('page', 1);
         $offset = ($page-1) * $pageSize;
         $query->offset($offset)->limit($limit);
-
+        VarDumper::dump($query->all());
         return $this->render([
             'list'       => $query->all(),
             'pagesCount' => $pagesCount,
