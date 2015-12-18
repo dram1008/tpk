@@ -32,7 +32,7 @@ $page = \app\models\Page::find(2);
                     <p style="height: 80px;"><?= $item['description'] ?></p>
 
                     <div class="details">
-                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date']) ?></a></span>
+                        <span class="icon-image"><?= Yii::$app->formatter->asDate($item['date']) ?></span>
                     </div>
 
                 </div>
@@ -48,7 +48,7 @@ $page = \app\models\Page::find(2);
                     <p style="height: 80px;"><?= $item['description'] ?></p>
 
                     <div class="details">
-                        <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date']) ?></a></span>
+                        <span class="icon-image"><?= Yii::$app->formatter->asDate($item['date']) ?></span>
                     </div>
                 </div>
             <?php } ?>
