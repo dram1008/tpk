@@ -53,7 +53,7 @@ class SiteController extends BaseController
 //            }
 //        }
 //        VarDumper::dump($ret);
-        $query = Article::query()->orderBy(['date_insert' => SORT_DESC]);
+        $query = Article::query()->orderBy(['date' => SORT_DESC]);
         $all = $query->count();
         $pageSize = 10;
         $pagesCount = floor(($all + $pageSize - 1)/$pageSize);
