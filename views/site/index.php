@@ -29,7 +29,7 @@ $page = \app\models\Page::find(2);
                     </div>
                     <h2 class="title"><a href="<?= $article->getLink() ?>"><?= $item['header'] ?></a></h2>
 
-                    <p><?= $item['description'] ?></p>
+                    <p style="height: 80px;"><?= $item['description'] ?></p>
 
                     <div class="details">
                         <span class="icon-image"><a href="#"><?= Yii::$app->formatter->asDate($item['date']) ?></a></span>
