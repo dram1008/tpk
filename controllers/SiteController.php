@@ -85,9 +85,9 @@ class SiteController extends BaseController
     {
         return $this->render([
             'list' => Article::query([
-                'MONTH(date_insert)' => $month,
-                'YEAR(date_insert)' => $year,
-            ])->orderBy(['date_insert' => SORT_DESC])->all(),
+                'MONTH(date)' => $month,
+                'YEAR(date)' => $year,
+            ])->orderBy(['date' => SORT_DESC])->all(),
             'year' => $year,
             'month' => $month,
         ]);
