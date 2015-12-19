@@ -37,7 +37,7 @@ return [
 
 
     'about'                                                        => 'site/about',
-    'about2'                                                        => 'site/about2',
+    'about2'                                                       => 'site/about2',
     'search'                                                       => 'site/search',
 
 
@@ -46,6 +46,7 @@ return [
     'admin/articleList/add'                                        => 'admin_article/add',
     'admin/articleList/<id:\\d+>/delete'                           => 'admin_article/delete',
     'admin/articleList/<id:\\d+>/edit'                             => 'admin_article/edit',
+    'admin/upload'                                                  => 'admin_article/upload',
 
     'admin/pages'                                                  => 'admin_page/index',
     'admin/pages/add'                                              => 'admin_page/add',

@@ -58,6 +58,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                     'items'   => [
                         ['label' => 'Статьи', 'url' => ['admin_article/index']],
                         ['label' => 'Страницы', 'url' => ['admin_page/index']],
+                        ['label' => 'Загрузить файл', 'url' => ['admin_article/upload']],
                     ],
                 ]);
                 ?>

@@ -38,6 +38,20 @@ class Admin_articleController extends AdminBaseController
         }
     }
 
+    public function actionUpload()
+    {
+        $model = new \app\models\Form\Upload();
+        if ($model->load(Yii::$app->request->post()) && $model->action()) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        } else {
+            return $this->render([
+                'model' => $model,
+            ]);
+        }
+    }
+
     public function actionEdit($id)
     {
         $model = \app\models\Form\Article::find($id);
