@@ -129,7 +129,6 @@ use app\assets\AppAsset;
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
                         $month = $i%12;
-                        if ($month == 0) $month = 11;
                         $monthZero = $month + 1;
                         if ($monthZero < 10) $monthZero = '0'.$monthZero;
                         $monthArray = [
