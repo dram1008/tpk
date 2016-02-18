@@ -129,9 +129,6 @@ use app\assets\AppAsset;
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
                         $month = $i%12;
-                        if ($i == 24192) {
-                            \cs\services\VarDumper::dump([$i,$month]);
-                        }
                         if ($month == 0) $month = 11;
                         $monthZero = $month + 1;
                         if ($monthZero < 10) $monthZero = '0'.$monthZero;
@@ -156,6 +153,9 @@ use app\assets\AppAsset;
                             if ($item['year'] == $year && $item['month'] == ($month+1)) {
                                 $count = $item['c1'];
                             }
+                        }
+                        if ($i == 24191) {
+                            \cs\services\VarDumper::dump([$i,$month, $monthZero]);
                         }
 
                         ?>
