@@ -39,6 +39,7 @@ return [
     'about'                                                        => 'site/about',
     'about2'                                                       => 'site/about2',
     'search'                                                       => 'site/search',
+    'search'                                                       => 'site/search',
 
 
     'admin'                                                        => 'admin_article/main',
