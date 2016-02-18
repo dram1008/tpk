@@ -129,6 +129,7 @@ use app\assets\AppAsset;
                     <?php for($i = $max; $i >= $min; $i--) { ?>
                         <?php
                         $month = $i%12;
+                        \cs\services\VarDumper::dump($month);
                         if ($month == 0) $month = 11;
                         $monthZero = $month + 1;
                         if ($monthZero < 10) $monthZero = '0'.$monthZero;
@@ -161,7 +162,6 @@ use app\assets\AppAsset;
 
                         ?>
                     <?php } ?>
-                    <?php \cs\services\VarDumper::dump([$max,$min]); ?>
                 </ul>
             </div>
         </div>
