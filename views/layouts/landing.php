@@ -154,7 +154,7 @@ use app\assets\AppAsset;
                             }
                         }
                         if ($i == 24191) {
-                            \cs\services\VarDumper::dump([$i,$month, $monthZero]);
+                            //\cs\services\VarDumper::dump([$i,$month, $monthZero]);
                         }
 
                         ?>
