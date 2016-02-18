@@ -153,9 +153,6 @@ use app\assets\AppAsset;
                                 $count = $item['c1'];
                             }
                         }
-                        if ($i == 24191) {
-                            \cs\services\VarDumper::dump([$i,$month, $monthZero]);
-                        }
 
                         ?>
                         <li><a href="<?= \yii\helpers\Url::to(['site/articles_month', 'year' => $year, 'month' => $monthZero]) ?>"><?= $monthArray[$month] ?> <?= $year ?></a> (<?= $count ?>)</li>
