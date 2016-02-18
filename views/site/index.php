@@ -63,7 +63,6 @@ $page2 = \app\models\Page::find(2);
 
     <?php if ($pagesCount > 1) { ?>
         <div id="navigation">
-            <?php \cs\services\VarDumper::dump($page); ?>
             <?php if ($page > 1) { ?>
                 <div class="nav-previous"><a href="<?= \yii\helpers\Url::current(['page'=> $page - 1])?>"><span class="meta-nav-prev">← Назад</span></a></div>
             <?php } ?>
